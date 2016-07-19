@@ -16,5 +16,6 @@ public interface UserDao {
     void addUser(User user) throws SQLException;
     void editUser(User user) throws SQLException;
     List<User> getAllUsers() throws SQLException;
+    void deleteUser(int id) throws SQLException;
 
 }

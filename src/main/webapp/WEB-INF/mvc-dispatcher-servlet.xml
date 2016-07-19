@@ -20,7 +20,7 @@
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/4tables_spring" />
         <property name="username" value="root" />
-        <property name="password" value="testsql" />
+        <property name="password" value="root" />
     </bean>
 
     <bean id="sessionFactory"
@@ -53,5 +53,7 @@
 
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven />
+    <mvc:view-controller path="/" view-name="hello"/>
+
 
 </beans>

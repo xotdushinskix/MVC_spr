@@ -53,4 +53,10 @@ public class UserServiceImpl implements UserService {
     public List<User> getAllUsers() throws SQLException {
         return this.userDao.getAllUsers();
     }
+
+    @Override
+    @Transactional
+    public void deleteUser(int id) throws SQLException {
+        this.userDao.deleteUser(id);
+    }
 }

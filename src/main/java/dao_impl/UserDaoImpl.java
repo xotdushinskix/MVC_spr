@@ -110,4 +110,25 @@ public class UserDaoImpl implements UserDao {
         }
         return users;
     }
+
+
+    @Override
+    public void deleteUser(int id) throws SQLException {
+        Session session = null;
+        try {
+            session = sessionFactory.openSession();
+            session.beginTransaction();
+            User user = getUserById(id);
+            session.delete(user);
+            session.getTransaction().commit();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if ((session != null) && (session.isOpen())) {
+                session.close();
+            }
+        }
+
+
+    }
 }
