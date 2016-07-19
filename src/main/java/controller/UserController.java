@@ -19,12 +19,6 @@ public class UserController {
     @Autowired
     private UserService userService;
 
-//    @Autowired
-//    public void setUserService(UserService userService) {
-//        this.userService = userService;
-//    }
-
-
     @RequestMapping(value = "/users", method = RequestMethod.GET)
     public String listUser(Model model) throws SQLException {
         model.addAttribute("listUser", userService.getAllUsers());
@@ -39,11 +33,9 @@ public class UserController {
     }
 
 
-    @RequestMapping(value = "/edit/{id}", method = RequestMethod.POST)
-    public String editUserFinal(@ModelAttribute User user, int id) throws SQLException {
-        User user1 = userService.getUserById(id);
-        //@RequestParam("firstName");
-        userService.editUser(user1);
+    @RequestMapping(value = "/users/edit/{id}", method = RequestMethod.POST)
+    public String editUserFinal(@ModelAttribute User user) throws SQLException {
+        userService.editUser(user);
         return "redirect:/users";
     }
 
@@ -55,7 +47,15 @@ public class UserController {
     }
 
 
-//    public String editUser(Model model) {
-//        model.addAttribute()
-//    }
+    @RequestMapping(value = "/users/add", method = RequestMethod.GET)
+    public String addUser(@ModelAttribute User user) throws SQLException {
+        return "add_user";
+    }
+
+
+    @RequestMapping(value = "/users/add", method = RequestMethod.POST)
+    public String deleteUserFinal(@ModelAttribute User user) throws SQLException {
+        userService.addUser(user);
+        return "redirect:/users";
+    }
 }

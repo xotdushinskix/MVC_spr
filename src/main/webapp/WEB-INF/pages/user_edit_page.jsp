@@ -13,17 +13,8 @@
 </head>
 <body>
     <h4>User's edit page</h4>
-    <form:form action="${pageContext.request.contextPath}/edit/${user.id}" commandName="user">
+    <form:form action="${pageContext.request.contextPath}/users/edit/${user.id}" commandName="user" method="post">
         <table>
-            <tr>
-                <td><form:label path="id">User id:</form:label></td>
-                <td><form:input path="id" readonly="true"/></td>
-
-
-
-                <%--<td>User id:</td>--%>
-                <%--<td><form:input path="id" readonly="true"/></td>--%>
-            </tr>
             <tr>
                 <td>User first name:</td>
                 <td><form:input path="firstName"/></td>
@@ -37,7 +28,7 @@
                 <td><form:input path="age"/></td>
             </tr>
         </table>
-        <input type="submit" value="Edit">
+        <input type="submit" value="Edit" />
     </form:form>
 </body>
 </html>

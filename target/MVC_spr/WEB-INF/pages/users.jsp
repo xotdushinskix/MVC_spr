@@ -39,5 +39,7 @@
     </c:forEach>
     </tbody>
   </table>
+<br>
+<a href="<c:url value='/users/add'/>">Add new User</a>
 </body>
 </html>
