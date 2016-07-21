@@ -27,6 +27,14 @@
                 <td>User age:</td>
                 <td><form:input path="age"/></td>
             </tr>
+            <tr>
+                <td>User login:</td>
+                <td><form:input path="login"/></td>
+            </tr>
+            <tr>
+                <td>User password:</td>
+                <td><form:input path="password"/></td>
+            </tr>
         </table>
         <input type="submit" value="Edit" />
     </form:form>

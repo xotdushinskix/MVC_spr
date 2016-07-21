@@ -6,22 +6,26 @@
         http://www.springframework.org/schema/beans/spring-beans.xsd
         http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx.xsd http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc.xsd">
 
+
     <tx:annotation-driven />
     <context:component-scan base-package="controller"/>
     <context:component-scan base-package="dao_impl"/>
     <context:component-scan base-package="service_impl"/>
+
 
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="prefix" value="/WEB-INF/pages/"/>
         <property name="suffix" value=".jsp"/>
     </bean>
 
+
     <bean id="dataSource" class="org.apache.commons.dbcp.BasicDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver" />
         <property name="url" value="jdbc:mysql://localhost:3306/4tables_spring" />
         <property name="username" value="root" />
-        <property name="password" value="testsql" />
+        <property name="password" value="root" />
     </bean>
+
 
     <bean id="sessionFactory"
           class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
@@ -47,9 +51,11 @@
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
 
+
     <bean class="org.springframework.orm.hibernate4.HibernateTemplate">
         <property name="sessionFactory" ref="sessionFactory" />
     </bean>
+
 
     <mvc:default-servlet-handler/>
     <mvc:annotation-driven />

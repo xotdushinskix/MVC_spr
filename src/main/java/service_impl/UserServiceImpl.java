@@ -20,9 +20,6 @@ public class UserServiceImpl implements UserService {
     @Autowired
     private UserDao userDao;
 
-    public void setUserDao(UserDao userDao) {
-        this.userDao = userDao;
-    }
 
     @Override
     @Transactional
@@ -34,6 +31,11 @@ public class UserServiceImpl implements UserService {
     @Transactional
     public User getUserByFirstName(String firstName) throws SQLException {
         return this.userDao.getUserByFirstName(firstName);
+    }
+
+    @Override
+    public User getUserByLogin(String login) throws SQLException {
+        return this.userDao.getUserByLogin(login);
     }
 
     @Override

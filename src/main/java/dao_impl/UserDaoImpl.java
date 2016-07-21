@@ -59,6 +59,25 @@ public class UserDaoImpl implements UserDao {
 
 
     @Override
+    public User getUserByLogin(String login) throws SQLException {
+        Session session = null;
+        User user = null;
+        try {
+            session = sessionFactory.openSession();
+            Criteria criteria = session.createCriteria(User.class);
+            user = (User) criteria.add(Restrictions.like("login", login)).uniqueResult();
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            if ((session != null) && (session.isOpen())) {
+                session.close();
+            }
+        }
+        return user;
+    }
+
+
+    @Override
     public void addUser(User user) throws SQLException {
         Session session = null;
         try {

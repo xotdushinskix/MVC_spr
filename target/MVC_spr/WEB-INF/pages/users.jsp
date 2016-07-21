@@ -22,6 +22,8 @@
       <th>First Name</th>
       <th>Last Name</th>
       <th>Age</th>
+      <th>Login</th>
+      <th>Password</th>
     </tr>
     </thead>
     <tbody>
@@ -32,6 +34,8 @@
         <td>${user.firstName}</td>
         <td>${user.lastName}</td>
         <td>${user.age}</td>
+          <td>${user.login}</td>
+          <td>${user.password}</td>
         <td><a href="<c:url value='/users/edit/${user.id}'/>">Edit</a></td>
         <td><input type="submit" value="Delete"></td>
         </form:form>

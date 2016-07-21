@@ -15,16 +15,24 @@
   <form:form action="${pageContext.request.contextPath}/users/add" commandName="user" method="post">
     <table>
       <tr>
-        <td>User first name:</td>
+        <td>First name:</td>
         <td><form:input path="firstName"/></td>
       </tr>
       <tr>
-        <td>User last name:</td>
+        <td>Last name:</td>
         <td><form:input path="lastName"/></td>
       </tr>
       <tr>
-        <td>User age:</td>
+        <td>Age:</td>
         <td><form:input path="age"/></td>
+      </tr>
+      <tr>
+        <td>Login:</td>
+        <td><form:input path="login"/></td>
+      </tr>
+      <tr>
+        <td>Password:</td>
+        <td><form:input path="password"/></td>
       </tr>
     </table>
     <input type="submit" value="Add" />

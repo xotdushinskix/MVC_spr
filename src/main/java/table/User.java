@@ -14,14 +14,20 @@ public class User {
     @Column(name = "user_id")
     private int id;
 
-    @Column(name = "first_name")
+    @Column(name = "first_name", nullable = false)
     private String firstName;
 
-    @Column(name = "last_name")
+    @Column(name = "last_name", nullable = false)
     private String lastName;
 
-    @Column(name = "age")
+    @Column(name = "age", nullable = false)
     private int age;
+
+    @Column(name = "login", unique = true, nullable = false)
+    private String login;
+
+    @Column(name = "password", nullable = false)
+    private String password;
 
     public int getId() {
         return id;
@@ -53,5 +59,21 @@ public class User {
 
     public void setAge(int age) {
         this.age = age;
+    }
+
+    public String getLogin() {
+        return login;
+    }
+
+    public void setLogin(String login) {
+        this.login = login;
+    }
+
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 }

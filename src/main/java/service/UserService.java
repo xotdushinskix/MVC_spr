@@ -12,6 +12,7 @@ public interface UserService {
 
     User getUserById(int id) throws SQLException;
     User getUserByFirstName(String firstName) throws SQLException;
+    User getUserByLogin(String login) throws SQLException;
     void addUser(User user) throws SQLException;
     void editUser(User user) throws SQLException;
     List<User> getAllUsers() throws SQLException;
